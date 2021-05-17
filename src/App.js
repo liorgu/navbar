@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import Nav from "./Nav";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const MENU_ITEMS = [
+  {
+    text: "Solarwinds",
+    icon: "hand point right outline",
+    href: "https://www.solarwinds.com",
+  },
+  {
+    text: "Other Tech Companies",
+    icon: "question circle",
+    subItems: [
+      {
+        text: "Google",
+        href: "https://www.google.com",
+      },
+      {
+        text: "Amazon",
+        href: "https://www.amazon.com",
+      },
+      {
+        text: "Microsoft",
+        href: "https://www.microsoft.com",
+      },
+    ],
+  },
+];
+
+const App = () => <Nav.Builder items={MENU_ITEMS} />;
 
 export default App;
